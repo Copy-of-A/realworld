@@ -1,0 +1,24 @@
+@import '../../variables';
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__h1 {
+        font-size: 2.5rem;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    &__link {
+        color: $green-color;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

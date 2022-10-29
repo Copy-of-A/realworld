@@ -1,0 +1,30 @@
+@import '../../variables';
+
+.header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+
+    &__logo {
+        color: $green-color;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+.nav {
+    .active {
+        color: black !important;
+    }
+
+    &__item {
+        color: $light-gray-color;
+
+    }
+
+    &__item+&__item {
+        margin-left: 1rem;
+    }
+}
