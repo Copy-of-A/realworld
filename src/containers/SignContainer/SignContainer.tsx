@@ -5,7 +5,6 @@ import styles from './signContainer.module.scss'
 export interface SignContainerProps {
     heading: string;
     link: Link;
-    handleButtonClick: () => void;
     children: React.ReactNode
 }
 
@@ -14,7 +13,7 @@ export type Link = {
     path: string;
 }
 
-export const SignContainer = ({ heading, link, handleButtonClick, children }: SignContainerProps) => {
+export const SignContainer = ({ heading, link, children }: SignContainerProps) => {
     return (
         <section className={styles.container}>
             <h1 className={styles.container__h1}>{heading}</h1>
