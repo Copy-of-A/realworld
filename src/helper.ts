@@ -2,7 +2,7 @@ export const cn = (...classNames: Array<string | boolean>) => classNames.filter(
 
 export const API_URL = 'https://api.realworld.io/api'
 
-export const Headers = {
+export const API_HEADERS = {
     GET: {
         headers: {
             'Content-Type': 'application/json',

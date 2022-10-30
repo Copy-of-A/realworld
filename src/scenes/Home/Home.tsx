@@ -8,15 +8,16 @@ export const Home = () => {
     const {
         posts,
         tags,
-        isLoading,
+        isLoadingPosts,
+        isLoadingTags,
     } = useHome();
     return (
         <>
             <Banner />
             <LayoutContainer>
                 <div className="home">
-                    <Feed posts={posts} isLoading={isLoading} />
-                    <PopularTags tags={tags} />
+                    <Feed posts={posts} isLoading={isLoadingPosts} />
+                    <PopularTags tags={tags} isLoading={isLoadingTags} />
                 </div>
             </LayoutContainer>
         </>

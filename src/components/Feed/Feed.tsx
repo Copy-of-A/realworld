@@ -10,7 +10,7 @@ export interface FeedProps {
 export const Feed = ({ posts, isLoading }: FeedProps) => {
     return (
         <div className={styles.container}>
-            {isLoading ? "Loading..." : posts.map((post: PostPreviewModel, i) => <PostPreview key={i} post={post} />)}
+            {isLoading ? "Loading articles..." : posts.map((post: PostPreviewModel, i) => <PostPreview key={i} post={post} />)}
         </div>
     )
 }

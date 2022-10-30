@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react"
 import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom"
-import { API_URL, Headers } from "../../helper"
+import { API_HEADERS, API_URL } from "../../helper"
 import { PostPreviewModel } from "../../models/models"
 
 export const useHome = () => {
     const [tags, setTags] = useState<Array<string>>([]);
     const [posts, setPosts] = useState<Array<PostPreviewModel>>([]);
     const [searchParams, setSearchParams] = useSearchParams();
-    const [isLoading, setLoading] = useState<boolean>(false);
+    const [isLoadingPosts, setLoadingPosts] = useState<boolean>(false);
+    const [isLoadingTags, setLoadingTags] = useState<boolean>(false);
     useEffect(() => {
         if (searchParams.keys.length === 0) {
             setSearchParams(
@@ -16,7 +17,8 @@ export const useHome = () => {
                     offset: "0"
                 }).toString())
         }
-        fetch(`${API_URL}/tags`, Headers.GET)
+        setLoadingTags(true)
+        fetch(`${API_URL}/tags`, API_HEADERS.GET)
             .then((response) => {
                 return response.json();
             })
@@ -27,15 +29,15 @@ export const useHome = () => {
                 navigate('/')
             })
             .finally(() => {
-                setLoading(false)
+                setLoadingTags(false)
             })
     }, [])
 
     const navigate = useNavigate()
 
     useEffect(() => {
-        setLoading(true)
-        fetch(`${API_URL}/articles?${searchParams.toString()}`, Headers.GET)
+        setLoadingPosts(true)
+        fetch(`${API_URL}/articles?${searchParams.toString()}`, API_HEADERS.GET)
             .then((response) => {
                 return response.json();
             })
@@ -46,12 +48,13 @@ export const useHome = () => {
                 navigate('/')
             })
             .finally(() => {
-                setLoading(false)
+                setLoadingPosts(false)
             })
     }, [searchParams])
     return {
         posts,
         tags,
-        isLoading,
+        isLoadingPosts,
+        isLoadingTags,
     }
 }

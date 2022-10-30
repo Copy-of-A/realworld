@@ -1,0 +1,16 @@
+.tags {
+    display: inline-block;
+
+    li {
+        display: inline-block;
+        border: 1px solid #ddd;
+        color: #aaa !important;
+        white-space: nowrap;
+        margin-right: 3px;
+        padding-right: 0.6em;
+        padding-left: 0.6em;
+        border-radius: 10rem;
+        font-weight: 300;
+        font-size: 0.8rem;
+    }
+}
