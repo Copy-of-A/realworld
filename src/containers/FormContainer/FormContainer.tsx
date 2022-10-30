@@ -1,5 +1,5 @@
 import { Form, Formik } from 'formik';
-import { Button } from '../../components/Button/Button';
+import { Button } from '../../components/FormButton/FormButton';
 import './formContainer.scss'
 
 export interface FormContainerProps {

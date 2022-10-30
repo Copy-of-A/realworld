@@ -7,6 +7,7 @@ $big-breakpoint: 1200px;
 $green-color: #5CB85C;
 $light-gray-color: rgba(0, 0, 0, 0.3);
 $red-color: #B85C5C; 
+$dark-gray-color: #818a91;
 
 :export {
   tiny-breakpoint: $tiny-breakpoint;
@@ -15,4 +16,5 @@ $red-color: #B85C5C;
   green-color: $green-color;
   light-gray-color: $light-gray-color;
   red-color: $red-color;
+  dark-gray-color: $dark-gray-color
 }

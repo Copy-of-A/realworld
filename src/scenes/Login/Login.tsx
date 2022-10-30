@@ -1,6 +1,6 @@
 import { SignContainer } from "../../containers/SignContainer/SignContainer"
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { Button } from "../../components/Button/Button";
+import { Button } from "../../components/FormButton/FormButton";
 import { LayoutContainer } from "../../containers/LayoutContainer/LayoutContainer";
 import { FormContainer } from "../../containers/FormContainer/FormContainer";
 

@@ -1,0 +1,35 @@
+@import '../../variables.scss';
+@import '../../fonts/fonts.css';
+
+.button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+    color: $green-color;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid $green-color;
+    display: inline-block;
+
+    i {
+        padding-right: 2px;
+        &::before {
+            content: "\f141";
+            display: inline-block;
+            font-family: "Ionicons";
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            text-rendering: auto;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            box-sizing: inherit;
+        }
+    }
+}
