@@ -1,4 +1,4 @@
-import { PostPreviewModel } from '../../models/postPreview'
+import { PostPreviewModel } from '../../models/models'
 import { LikeButton } from '../LikeButton/LikeButton'
 import styles from './postPreview.module.scss'
 
@@ -7,7 +7,7 @@ export interface PostPreviewProps {
 }
 
 export const PostPreview = ({ post }: PostPreviewProps) => {
-    const { title, description, likeCount, author, date, imageUrl, profileUrl, tags } = post;
+    const { title, description, favoritesCount, author, updatedAt, tagList } = post;
     const onLikeClick = () => {
         alert("like!")
     }
@@ -19,15 +19,15 @@ export const PostPreview = ({ post }: PostPreviewProps) => {
         <div className={styles.post}>
             <div className={styles.postHeader}>
                 <div className={styles.postHeader__profile}>
-                    <a className={styles.postHeader__profilePhoto} href={profileUrl}>
-                        <img src={imageUrl} />
+                    <a className={styles.postHeader__profilePhoto} href={`/@${author.username}`}>
+                        <img src={author.image} />
                     </a>
                     <div className={styles.postHeader__info}>
-                        <a href={profileUrl} className={styles.postHeader__link}>{author}</a>
-                        <span className={styles.postHeader__date}>{date}</span>
+                        <a href={`/@${author.username}`} className={styles.postHeader__link}>{author.username}</a>
+                        <span className={styles.postHeader__date}>{updatedAt}</span>
                     </div>
                 </div>
-                <LikeButton likeCount={likeCount} onClick={onLikeClick} />
+                <LikeButton likeCount={favoritesCount} onClick={onLikeClick} />
             </div>
             <a className={styles.post__body} onClick={onArticleClick}>
                 <h2>{title}</h2>
@@ -35,7 +35,7 @@ export const PostPreview = ({ post }: PostPreviewProps) => {
                 <div className={styles.post__footer}>
                     <span>Read more...</span>
                     <ul className={styles.post__tags}>
-                        {tags.map((tag) => <li>{tag}</li>)}
+                        {tagList.map((tag, i) => <li key={i}>{tag}</li>)}
                     </ul>
                 </div>
             </a>

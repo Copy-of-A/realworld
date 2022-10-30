@@ -10,10 +10,10 @@ export const App = () => {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/articles" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="*" element={<Navigate to="/home" replace />} />
+        <Route path="*" element={<Navigate to="/articles" replace />} />
       </Routes>
     </div>
   )
