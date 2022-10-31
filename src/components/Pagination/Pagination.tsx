@@ -22,13 +22,16 @@ export const Pagination = ({ articlesCount }: PaginationProps) => {
 
     for (let i = 0; i < pagesCount; i++) {
         pagesButtons.push(
-            <button 
+            <button
                 onClick={() => handleButtonClick(i)}
                 className={cn(styles.pageButton, currentPage === i.toString() && styles.pageButton_active)}>
-                    {i + 1}
+                {i + 1}
             </button>)
     }
-    return (
-        <>{pagesButtons}</>
-    )
+    if (pagesCount > 1) {
+        return (
+            <>{pagesButtons}</>
+        )
+    }
+    else return null
 }
