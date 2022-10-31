@@ -10,6 +10,7 @@ export const PopularTags = ({ tags, isLoading }: PopularTagsProps) => {
     const [searchParams] = useSearchParams();
     const navigate = useNavigate()
     const handleTagClick = (tag: string) => {
+        searchParams.set("offset", "0")
         searchParams.set("tag", tag)
         navigate(`/articles?${searchParams}`)
     }

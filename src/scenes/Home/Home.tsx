@@ -10,13 +10,14 @@ export const Home = () => {
         tags,
         isLoadingPosts,
         isLoadingTags,
+        postsCount,
     } = useHome();
     return (
         <>
             <Banner />
             <LayoutContainer>
                 <div className="home">
-                    <Feed posts={posts} isLoading={isLoadingPosts} />
+                    <Feed posts={posts} isLoading={isLoadingPosts} postsCount={postsCount ?? 0} />
                     <PopularTags tags={tags} isLoading={isLoadingTags} />
                 </div>
             </LayoutContainer>

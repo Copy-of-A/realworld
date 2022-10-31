@@ -1,0 +1,19 @@
+@import '../../variables.scss';
+
+.pageButton {
+    position: relative;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    color: $green-color;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+
+    &_active {
+        color: #fff;
+        cursor: default;
+        background-color: $green-color;
+        border-color: $green-color;
+    }
+}

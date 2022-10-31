@@ -6,6 +6,7 @@ import { PostPreviewModel } from "../../models/models"
 export const useHome = () => {
     const [tags, setTags] = useState<Array<string>>([]);
     const [posts, setPosts] = useState<Array<PostPreviewModel>>([]);
+    const [postsCount, setPostsCount] = useState<number>()
     const [searchParams, setSearchParams] = useSearchParams();
     const [isLoadingPosts, setLoadingPosts] = useState<boolean>(false);
     const [isLoadingTags, setLoadingTags] = useState<boolean>(false);
@@ -43,6 +44,7 @@ export const useHome = () => {
             })
             .then((myJson) => {
                 setPosts(myJson.articles)
+                setPostsCount(myJson.articlesCount)
             })
             .catch(() => {
                 navigate('/')
@@ -56,5 +58,6 @@ export const useHome = () => {
         tags,
         isLoadingPosts,
         isLoadingTags,
+        postsCount,
     }
 }
